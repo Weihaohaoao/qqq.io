@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>学生查分系统</title>
+</head>
+<body>
+    <h1>学生查分系统</h1>
+    <input type="text" id="name" placeholder="请输入学生姓名">
+    <button onclick="lookupScore()">查询</button>
+    <p id="result"></p>
+
+    <script>
+        const studentScores = {
+            "张三": 85,
+            "李四": 92,
+            "王五": 78,
+            "赵六": 88,
+            "孙七": 95
+        };
+
+        function lookupScore() {
+            const name = document.getElementById("name").value.trim();
+            const resultElement = document.getElementById("result");
+            if (studentScores.hasOwnProperty(name)) {
+                resultElement.innerText = `${name} 的分数是: ${studentScores[name]}`;
+            } else {
+                resultElement.innerText = `未找到学生 ${name} 的分数`;
+            }
+        }
+    </script>
+</body>
+</html>
